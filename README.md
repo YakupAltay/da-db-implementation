@@ -14,8 +14,8 @@ A public database implementation on Avail that allows storing and retrieving rec
 ## Prerequisites
 
 - Rust and Cargo installed
-- Access to an Avail node (light client)
-- An Avail account seed phrase (set in `.env` as `AVAIL_SEED_PHRASE`)
+- A valid Avail account seed phrase (set in `.env` as `AVAIL_SEED_PHRASE`)
+- **No need to run your own Avail node!** This application uses Avail's public light client API endpoints by default.
 
 ## Setup
 
@@ -25,14 +25,12 @@ A public database implementation on Avail that allows storing and retrieving rec
    cd avail-database
    ```
 
-2. Set up your Avail node:
-   - Follow the [official Avail documentation](https://docs.availproject.org/) to set up a light client
-   - Make sure your node is running and accessible (default endpoints are used in this project)
-
-3. Set your Avail seed phrase in a `.env` file:
+2. Set your Avail seed phrase in a `.env` file:
    ```
    echo 'AVAIL_SEED_PHRASE="your avail seed phrase here"' > .env
    ```
+
+   > **Note:** The application connects to Avail's public light client API at `https://api.lightclient.turing.avail.so` and `wss://turing-rpc.avail.so/ws` by default. No local node setup is required.
 
 ## Usage
 
@@ -163,7 +161,7 @@ Application Key Created
 ## Troubleshooting
 
 - **Seed phrase errors**: Make sure you have set the `AVAIL_SEED_PHRASE` environment variable in your `.env` file
-- **Connection errors**: Verify that your Avail node is running and accessible at the default endpoints
+- **Connection errors**: Verify that you have a working internet connection. The app connects to Avail's public light client API endpoints by default.
 - **App name errors**: Ensure your app name is unique and valid
 - **Performance issues**: If searching for records is slow, use a smaller block_range value for initialization
 
