@@ -122,25 +122,6 @@ Created: 2025-06-23T11:34:10.996655+00:00
 [2025-06-23 14:33:00.640] Exiting application
 ```
 
-Here's another example of starting a brand new database:
-
-```
-$ cargo run -- new_app
-[2025-06-23 14:32:06.780] Starting Avail database application
-[2025-06-23 14:32:06.781] Resolving app name: 'new_app'
-[2025-06-23 14:32:08.568] App not found. Creating new app ID...
-Application Key Created
-446
-[2025-06-23 14:32:21.611] Block search limit: 10 blocks
-[2025-06-23 14:32:21.611] Configuration - App name: 'new_app', App ID: 446
-[2025-06-23 14:32:21.611] Connecting to Avail node...
-[2025-06-23 14:32:22.255] Searching for existing database (blocks 1948300..1948310)
-[2025-06-23 14:32:51.704] No existing database found, creating new one at height 1948310
-[2025-06-23 14:33:00.640] Created new database starting at block: 1948312
-[2025-06-23 14:33:00.640] Successfully connected to Avail node
-[2025-06-23 14:33:00.640] Database client initialized
-```
-
 ## How It Works
 
 1. **Database Initialization**:
