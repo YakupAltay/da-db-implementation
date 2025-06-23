@@ -94,25 +94,28 @@ Available commands:
   help               - Show this help message
 
 Enter commands below:
-> add user1 {"name": "John Doe", "email": "john@example.com"}
-[2025-06-23 14:33:06.676] Adding record with key: user1
+> add naruto {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
+[2025-06-23 14:33:06.676] Adding record with key: naruto
 [2025-06-23 14:33:40.833] Record added successfully
-> get user1
-[2025-06-23 14:41:26.715] Getting record with key: 'user1'
-[2025-06-23 14:41:27.251] Searching for record with key 'user1' (database start: 1948296, current height: 1948322)
-[2025-06-23 14:42:01.425] Found record with key 'user1' at height 1948322
-Key: user1
-Value: {"name": "John Doe", "email": "john@example.com"}
+> add robin {"name": "Robin", "email": "robin@adventure.com"}
+[2025-06-23 14:34:10.996] Adding record with key: robin
+[2025-06-23 14:34:40.694] Record added successfully
+> get naruto
+[2025-06-23 14:41:26.715] Getting record with key: 'naruto'
+[2025-06-23 14:41:27.251] Searching for record with key 'naruto' (database start: 1948296, current height: 1948322)
+[2025-06-23 14:42:01.425] Found record with key 'naruto' at height 1948322
+Key: naruto
+Value: {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
 Created: 2025-06-23T11:33:06.676542+00:00
 > list
 [2025-06-23 14:51:32.274] Listing all records (database start: 1948296, current height: 1948352)
 [2025-06-23 14:53:57.985] Found 2 records
-Key: user1
-Value: {"name": "John Doe", "email": "john@example.com"}
+Key: naruto
+Value: {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
 Created: 2025-06-23T11:33:06.676542+00:00
 ---
-Key: user2
-Value: {"name": "John Do", "email": "john@exam.com"}
+Key: robin
+Value: {"name": "Robin", "email": "robin@adventure.com"}
 Created: 2025-06-23T11:34:10.996655+00:00
 ---
 > exit
@@ -164,7 +167,3 @@ Application Key Created
 - **Connection errors**: Verify that you have a working internet connection. The app connects to Avail's public light client API endpoints by default.
 - **App name errors**: Ensure your app name is unique and valid
 - **Performance issues**: If searching for records is slow, use a smaller block_range value for initialization
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
