@@ -71,20 +71,20 @@ Once the application is running, you can use the following commands:
 ## Example
 
 ```
-$ cargo run -- my_app
-[2025-06-23 14:32:06.780] Starting Avail database application
-[2025-06-23 14:32:06.781] Resolving app name: 'my_app'
-[2025-06-23 14:32:08.568] App not found. Creating new app ID...
-Application Key Created
-445
-[2025-06-23 14:32:21.611] Block search limit: 10 blocks
-[2025-06-23 14:32:21.611] Configuration - App name: 'my_app', App ID: 445
-[2025-06-23 14:32:21.611] Connecting to Avail node...
-[2025-06-23 14:32:22.255] Searching for existing database (blocks 1948284..1948294)
-[2025-06-23 14:32:51.704] No existing database found, creating new one at height 1948294
-[2025-06-23 14:33:00.640] Created new database starting at block: 1948296
-[2025-06-23 14:33:00.640] Successfully connected to Avail node
-[2025-06-23 14:33:00.640] Database client initialized
+cargo run -- my_db 10
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.96s
+     Running `target/debug/da-db-implementation my_db 10`
+[2025-06-23 15:36:49.152] Starting Avail database application
+[2025-06-23 15:36:49.153] Resolving app name: 'my_db'
+[2025-06-23 15:36:50.844] App not found. Creating new app ID...
+[2025-06-23 15:37:01.652] Block search limit: 10 blocks
+[2025-06-23 15:37:01.653] Configuration - App name: 'my_db', App ID: 447
+[2025-06-23 15:37:01.653] Connecting to Avail node...
+[2025-06-23 15:37:02.166] Searching for existing database (blocks 1948478..1948488)
+[2025-06-23 15:37:32.315] No existing database found, creating new one at height 1948488
+[2025-06-23 15:37:40.624] Created new database starting at block: 1948490
+[2025-06-23 15:37:40.624] Successfully connected to Avail node
+[2025-06-23 15:37:40.624] Database client initialized
 
 Available commands:
   add <key> <value>  - Add a new record or update existing one
@@ -95,32 +95,29 @@ Available commands:
 
 Enter commands below:
 > add naruto {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
-[2025-06-23 14:33:06.676] Adding record with key: naruto
-[2025-06-23 14:33:40.833] Record added successfully
+[2025-06-23 15:37:56.854] Adding record with key: naruto
+[2025-06-23 15:38:20.742] Record added successfully
 > add robin {"name": "Robin", "email": "robin@adventure.com"}
-[2025-06-23 14:34:10.996] Adding record with key: robin
-[2025-06-23 14:34:40.694] Record added successfully
+[2025-06-23 15:38:49.488] Adding record with key: robin
+[2025-06-23 15:39:20.692] Record added successfully
 > get naruto
-[2025-06-23 14:41:26.715] Getting record with key: 'naruto'
-[2025-06-23 14:41:27.251] Searching for record with key 'naruto' (database start: 1948296, current height: 1948322)
-[2025-06-23 14:42:01.425] Found record with key 'naruto' at height 1948322
+[2025-06-23 15:39:54.344] Getting record with key: 'naruto'
+[2025-06-23 15:39:54.944] Searching for record with key 'naruto' (database start: 1948490, current height: 1948497)
+[2025-06-23 15:40:16.181] Found record with key 'naruto' at height 1948497
 Key: naruto
 Value: {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
-Created: 2025-06-23T11:33:06.676542+00:00
+Created: 2025-06-23T12:37:56.855131+00:00
 > list
-[2025-06-23 14:51:32.274] Listing all records (database start: 1948296, current height: 1948352)
-[2025-06-23 14:53:57.985] Found 2 records
-Key: naruto
-Value: {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
-Created: 2025-06-23T11:33:06.676542+00:00
----
+[2025-06-23 15:40:50.230] Listing all records (database start: 1948490, current height: 1948500)
+[2025-06-23 15:41:18.849] Found 2 records
 Key: robin
 Value: {"name": "Robin", "email": "robin@adventure.com"}
-Created: 2025-06-23T11:34:10.996655+00:00
+Created: 2025-06-23T12:38:49.488226+00:00
 ---
-> exit
-[2025-06-23 14:33:00.640] Exiting application
-```
+Key: naruto
+Value: {"name": "Naruto Uzumaki", "email": "naruto@konoha.com"}
+Created: 2025-06-23T12:37:56.855131+00:00
+---
 
 ## How It Works
 
